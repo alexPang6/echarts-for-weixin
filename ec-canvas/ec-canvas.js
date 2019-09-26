@@ -31,6 +31,15 @@ Component({
     }
   },
 
+  pageLifetimes: {
+    resize(res) {
+      this.chart.resize({
+        width: res.size.windowWidth,
+        height: res.size.windowHeight
+      })
+    }
+  },
+  
   methods: {
     init: function (callback) {
       const version = wx.version.version.split('.').map(n => parseInt(n, 10));
